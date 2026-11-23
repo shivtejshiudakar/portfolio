@@ -4,7 +4,7 @@
    ============================================================ */
 
 const EMAILJS_CONFIG = {
-  publicKey: "ZgGqMLyJOfAH1a6txB",
+  publicKey: "wpjJt4AH9ftWs3Nrj",
   serviceId: "service_7gaehy4",
   templateId: "template_jb8lt87"
 };
