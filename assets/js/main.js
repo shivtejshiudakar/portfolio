@@ -1,43 +1,19 @@
-/**
- * ============================================================================
- * Shivtej Shiudakar - Portfolio Main Script
- * Features:
- *   1. EmailJS Contact Form Integration (with validation, feedback & fallback)
- *   2. Theme Toggle (Dark / Light) with LocalStorage Persistence
- *   3. Active Navigation ScrollSpy
- *   4. 3D Card and Avatar Tilt Effects
- *   5. Three.js 3D Interactive Neural Network Animation
- * ============================================================================
- */
 
-/* ==========================================================================
-   1. EMAILJS CONFIGURATION
-   --------------------------------------------------------------------------
-   Steps to activate:
-   1. Sign up at https://www.emailjs.com/
-   2. Add an Email Service (e.g. Gmail) -> Copy your Service ID below
-   3. Create an Email Template -> Copy your Template ID below
-      (Use variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}})
-   4. Account > General / Security -> Copy your Public Key below
-   ========================================================================== */
 const EMAILJS_CONFIG = {
-  publicKey: "ZgGqMLyJOfAH1a6txB",      // e.g. "user_xxxxxxxxxxxxxx" or public key
-  serviceId: "service_7gaehy4",      // e.g. "service_gmail"
-  templateId: "template_jb8lt87"     // e.g. "template_contact"
+  publicKey: "ZgGqMLyJOfAH1a6txB",
+  serviceId: "service_7gaehy4",
+  templateId: "template_jb8lt87"
 };
 
-// Initialize EmailJS if public key has been replaced
+
 (function initEmailJS() {
-  if (typeof emailjs !== "undefined" && EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== "YOUR_PUBLIC_KEY") {
+  if (typeof emailjs !== "undefined" && EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== "ZgGqMLyJOfAH1a6txB") {
     emailjs.init({
       publicKey: EMAILJS_CONFIG.publicKey
     });
   }
 })();
 
-/* ==========================================================================
-   2. THEME & APP STATE INITIALIZATION
-   ========================================================================== */
 (function () {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const root = document.documentElement;
@@ -154,9 +130,9 @@ const EMAILJS_CONFIG = {
       const isConfigured = (
         typeof emailjs !== "undefined" &&
         EMAILJS_CONFIG.publicKey &&
-        EMAILJS_CONFIG.publicKey !== "YOUR_PUBLIC_KEY" &&
-        EMAILJS_CONFIG.serviceId !== "YOUR_SERVICE_ID" &&
-        EMAILJS_CONFIG.templateId !== "YOUR_TEMPLATE_ID"
+        EMAILJS_CONFIG.publicKey !== "ZgGqMLyJOfAH1a6txB" &&
+        EMAILJS_CONFIG.serviceId !== "service_7gaehy4" &&
+        EMAILJS_CONFIG.templateId !== "template_jb8lt87"
       );
 
       // Graceful fallback to mailto if EmailJS is not configured
